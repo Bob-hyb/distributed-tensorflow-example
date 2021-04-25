@@ -20,10 +20,10 @@ import sys
 import time
 
 # cluster specification
-parameter_servers = ["pc-01:2222"]
-workers = [	"pc-02:2222", 
-			"pc-03:2222",
-			"pc-04:2222"]
+parameter_servers = ["localhost:2220"]		# hyb-mac
+workers = [		"localhost:2221",  	# lyc-ipads
+			"192.168.13.12:2222",	# hyb-ipads
+			"localhost:2223"]	# wzx-ipads
 cluster = tf.train.ClusterSpec({"ps":parameter_servers, "worker":workers})
 
 # input flags
